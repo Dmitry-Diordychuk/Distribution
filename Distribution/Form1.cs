@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using CenterSpace.NMath.Stats;
 using CenterSpace.NMath.Core;
-using CenterSpace.NMath.Charting.Microsoft;
 
 namespace Distribution
 {
@@ -30,7 +21,7 @@ namespace Distribution
             {
                 if (a != b)
                 {
-                    UniformDistribution uniform = new UniformDistribution(a, b);
+                    UniformDistribution uniform = new UniformDistribution(Math.Min(a, b), Math.Max(a, b));
                     //PDF
                     for (double x = 0.1; x < b + (Math.Abs(a-b)/2); x = x + 0.1)
                     {
